@@ -13,7 +13,7 @@ router.get('/', (req, res) => {
       return null
     })
     .catch(err => {
-      console.error(err)
+      console.error(err.message)
       res.status(500).send(err.message)
     })
 })

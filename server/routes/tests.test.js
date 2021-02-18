@@ -21,7 +21,7 @@ describe('GET /api/v1/tests', () => {
       })
   })
   it('responds with status 500 on listTests rejection', () => {
-    listTests.mockImplementation(() => PromiseRejectionEvent.reject(new Error('DB error')))
+    listTests.mockImplementation(() => Promise.reject(new Error('DB error')))
     return request(server)
       .get('/api/v1/tests')
       .expect(500)
